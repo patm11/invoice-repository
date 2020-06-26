@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:+'
+
+    testImplementation "org.codehaus.groovy:groovy:3.0.2"
+    testImplementation 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
+}

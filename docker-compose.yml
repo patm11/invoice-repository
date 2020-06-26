@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  invoicerepo:
+    ports:
+      - "8080:8080"
+    environment:
+      JDBC_URL: 'jdbc:postgresql://database:5432/postgres'
+    build:
+      dockerfile: 'Dockerfile'
+      context: './'
+      args:
+        JAR_FILE: 'invoice-api/build/libs/invoice-api.jar'
+
+  database:
+    image: "postgres"
+    restart: always
+    environment:
+      POSTGRES_USER: "SA"
+      POSTGRES_PASSWORD: "SA"

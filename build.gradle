@@ -1,0 +1,6 @@
+ext {
+    SpringBootVersion = '2.2.5.RELEASE'
+}
+
+group 'home.invoice'
+version '1.0-SNAPSHOT'
