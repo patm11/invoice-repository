@@ -5,6 +5,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+/**
+ * Responsible for sending write commands to the repository level
+ *
+ * @author patm11
+ */
 @Component
 public class InvoiceCommandManagerImpl implements InvoiceCommandManager {
 

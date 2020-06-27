@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     api project(':invoice-common')
-    // implementation "org.springframework.cloud:spring-cloud-config:2.2.2.RELEASE"
+
     implementation "org.springframework.boot:spring-boot-autoconfigure:${SpringBootVersion}"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:${SpringBootVersion}"
     implementation 'javax.persistence:javax.persistence-api:2.2'

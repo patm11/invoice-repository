@@ -20,7 +20,6 @@ public class ClientEntity {
     private String phoneNumber;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    //@JoinTable(name = "INVOICE", joinColumns = {@JoinColumn(name = "ID")})
     private Set<InvoiceEntity> invoices;
 
     public Long getId() {
