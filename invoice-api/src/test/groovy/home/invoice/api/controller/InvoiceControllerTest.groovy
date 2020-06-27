@@ -5,6 +5,11 @@ import home.invoice.ra.manager.InvoiceCommandManager
 import home.invoice.ra.manager.InvoiceQueryManager
 import spock.lang.Specification
 
+/**
+ * Spock unit tests for {@link InvoiceController}
+ *
+ * @author patm11
+ */
 class InvoiceControllerTest extends Specification {
 
     InvoiceController controller

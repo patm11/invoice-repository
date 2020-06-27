@@ -22,7 +22,6 @@ public class InvoiceEntity {
     private Date due;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(name = "CLIENT", joinColumns = {@JoinColumn(name = "ID")})
     private ClientEntity client;
 
     public Long getId() {
