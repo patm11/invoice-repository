@@ -6,6 +6,8 @@ plugins {
     id 'io.github.divinespear.jpa-schema-generate' version '0.3.6'
 }
 
+apply from: "$rootDir/gradle/integration.gradle"
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -15,6 +17,13 @@ repositories {
 dependencies {
     implementation project(':invoice-ra')
     implementation "org.springframework.boot:spring-boot-starter-web"
+
+    integrationImplementation project(':invoice-client')
+    integrationImplementation 'com.netflix.feign:feign-core:8.18.0'
+    integrationImplementation 'com.netflix.feign:feign-okhttp:8.18.0'
+    integrationImplementation 'com.netflix.feign:feign-jackson:8.18.0'
+    integrationImplementation "org.codehaus.groovy:groovy:3.0.2"
+    integrationImplementation 'org.spockframework:spock-core:2.0-M2-groovy-3.0'
 
     testImplementation "org.codehaus.groovy:groovy:3.0.2"
     testImplementation 'org.spockframework:spock-core:2.0-M2-groovy-3.0'

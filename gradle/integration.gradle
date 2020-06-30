@@ -1,0 +1,21 @@
+sourceSets {
+    integration {
+        compileClasspath += sourceSets.main.output + configurations.testCompile
+        runtimeClasspath += output + compileClasspath + configurations.testRuntime
+    }
+}
+
+task integration(type: Test) {
+    description = 'Runs the integration tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.integration.output.classesDirs
+    classpath = sourceSets.integration.runtimeClasspath
+    outputs.upToDateWhen { false }
+    // mustRunAfter test
+}
+
+integration {
+    useJUnitPlatform()
+}
+
+// check.dependsOn integration
