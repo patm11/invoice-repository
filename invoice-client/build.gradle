@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'groovy'
+    id 'java-library'
 }
 
 sourceCompatibility = 1.8
@@ -10,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':invoice-common')
+    api project(':invoice-common')
     implementation 'com.netflix.feign:feign-core:8.18.0'
     implementation 'com.netflix.feign:feign-okhttp:8.18.0'
     implementation 'com.netflix.feign:feign-jackson:8.18.0'

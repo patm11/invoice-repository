@@ -1,6 +1,8 @@
 spring:
+  profiles:
+    active: "${RUNTIME_ENV:local}"
   datasource:
-    username: "SA"
-    password: "SA"
+    username: "${DATASOURCE_USERNAME:SA}"
+    password: "${DATASOURCE_PASSWORD:SA}"
     driver-class-name: 'org.postgresql.Driver'
     url: "${JDBC_URL:jdbc:postgresql://localhost:5432/postgres}"

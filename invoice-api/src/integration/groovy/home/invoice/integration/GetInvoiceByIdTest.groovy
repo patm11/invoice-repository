@@ -49,7 +49,7 @@ class GetInvoiceByIdTest extends Specification {
 
     def "Can get an invoice from the repository given its id"() {
         given:
-            def id = 123
+            def id = 1
 
         when:
             def result = client.getInvoice(id)

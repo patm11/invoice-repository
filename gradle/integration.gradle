@@ -14,4 +14,8 @@ task integration(type: Test) {
     // mustRunAfter test
 }
 
+integration {
+    useJUnitPlatform()
+}
+
 // check.dependsOn integration
