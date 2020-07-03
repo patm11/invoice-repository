@@ -1,6 +1,7 @@
 package home.invoice.api.controller
 
 import home.invoice.model.Invoice
+import home.invoice.model.NewInvoiceRequest
 import home.invoice.ra.manager.InvoiceCommandManager
 import home.invoice.ra.manager.InvoiceQueryManager
 import spock.lang.Specification
@@ -51,5 +52,35 @@ class InvoiceControllerTest extends Specification {
 
         then:
             result == expected
+    }
+
+    def "Can call the expected resources with expected arguments for create invoice"() {
+        given:
+            def client = "Bob"
+            def phoneNumber = "(555) 867-5309"
+            def issued = new Date()
+            def dueDate = Calendar.getInstance()
+            dueDate.add(Calendar.MONTH, 1)
+            dueDate = dueDate.getTime()
+            def amount = "2020.56"
+            def request = new NewInvoiceRequest(
+                    clientName: client,
+                    phoneNumber: phoneNumber,
+                    due: Long.toString(dueDate.getTime()),
+                    issued: Long.toString(issued.getTime()),
+                    amount: amount
+            )
+
+        when:
+            controller.createInvoice(request)
+
+        then:
+            commandManager.createInvoice(
+                    client,
+                    phoneNumber,
+                    Long.toString(issued.getTime()),
+                    Long.toString(dueDate.getTime()),
+                    amount
+            )
     }
 }

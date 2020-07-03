@@ -14,11 +14,12 @@ public interface InvoiceCommandManager {
      * If the client does not exist, they will be added to the database
      *
      * @param client the client name
+     * @param phoneNumber the phone number
      * @param issued the date issued
      * @param due the date due
      * @param amount the amount due
      */
-    void createInvoice(String client, Date issued, Date due, Double amount);
+    void createInvoice(String client, String phoneNumber, String issued, String due, String amount);
 
     /**
      * Saves updated data for an existing invoice

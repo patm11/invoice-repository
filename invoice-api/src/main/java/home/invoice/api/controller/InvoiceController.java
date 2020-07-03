@@ -1,6 +1,7 @@
 package home.invoice.api.controller;
 
 import home.invoice.model.Invoice;
+import home.invoice.model.NewInvoiceRequest;
 import home.invoice.ra.manager.InvoiceCommandManager;
 import home.invoice.ra.manager.InvoiceQueryManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +54,21 @@ public class InvoiceController {
     @GetMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable("id") String id) {
         return queryManager.getInvoiceById(id);
+    }
+
+    /**
+     * Creates a new invoice with the data in the request
+     *
+     * @param request the request
+     */
+    @PostMapping
+    public void createInvoice(@RequestBody NewInvoiceRequest request) {
+        commandManager.createInvoice(
+                request.getClientName(),
+                request.getPhoneNumber(),
+                request.getIssued(),
+                request.getDue(),
+                request.getAmount()
+        );
     }
 }

@@ -14,7 +14,7 @@ import java.util.Date;
 public class InvoiceCommandManagerImpl implements InvoiceCommandManager {
 
     @Override
-    public void createInvoice(String client, Date issued, Date due, Double amount) {
+    public void createInvoice(String client, String phoneNumber, String issued, String due, String amount) {
 
     }
 
